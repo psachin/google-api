@@ -1,0 +1,68 @@
+* Google Analytics API(Python)
+
+  /Disclaimer/: This repo is for testing Google Analytics API in
+  Python. It was intended to show *Total number of visits* (All Web
+  Site Data).
+
+** Installation
+   - Install required packages
+     #+BEGIN_SRC sh
+       pip install -r requirements.txt
+     #+END_SRC sh
+
+     You might need to add a 'sudo' to the beginning of that command
+     depending on your platform.
+     
+   - You need to configure/add your website in /Google Analytics/
+     
+** Usage
+*** More   
+   - Follow [[https://developers.google.com/analytics/solutions/articles/hello-analytics-api][hello-analytics-api]]
+*** Less
+**** Assuming you have added your website to /Google Analytics/:
+     - Register your application to [[https://cloud.google.com/console][Google Developers Console]]
+     - Visit =analytics-cmd-line-sample= directory
+       #+BEGIN_SRC sh
+         cd analytics-cmd-line-sample
+       #+END_SRC sh
+
+     - Create a file =client_secrets.json=
+       #+BEGIN_SRC sh
+         {
+             "installed": {
+                 "client_id": "INSERT CLIENT ID HERE",
+                 "client_secret": "INSERT CLIENT SECRET HERE",
+                 "redirect_uris": ["INSERT REDIRECT URI"],
+                 "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                 "token_uri": "https://accounts.google.com/o/oauth2/token"
+             }
+         }
+       #+END_SRC sh
+
+     *Note*: /Insert the Client ID, Client secret, and Redirect URIs
+     for your Google Developers Console Project./
+
+   - Run =sample.py= to authenticate yourself using web-browser
+
+     #+BEGIN_SRC sh
+       python sample.py
+     #+END_SRC sh
+     
+   - Be sure to enable *Analytics API*, *Google+ API* & *Google+
+     Domain API* from [[https://cloud.google.com/console][Google Developers Console]]
+     
+   - Now run =hello_analytics_api_v3.py= to see 'Total visits'(You
+     need to authenticate again)
+
+     #+BEGIN_SRC sh
+       python hello_analytics_api_v3.py
+     #+END_SRC sh
+
+     *Note*: The =get_results= function inside
+     =hello_analytics_api_v3.py= file has two variable: 'start_date'
+     and 'end_date'. Please configure those accordingly.
+     
+** Documentation
+   The documentation for the google-api-python-client library is avialable here:
+   https://developers.google.com/api-client-library/python/start/get_started
+
