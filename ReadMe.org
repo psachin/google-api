@@ -21,12 +21,19 @@
 *** Less
 **** Assuming you have added your website to /Google Analytics/:
      - Register your application to [[https://cloud.google.com/console][Google Developers Console]]
+     - Visit https://developers.google.com/api-client-library/python/start/installation
+     - Under 'Quickstart' section
+       - Select and API -> "Google Analytics API"
+       - Select a Platform -> "Python/Command Line"
+       - "Configure Project"
+     - Now select your project OR create a new one and download
+       =client_secrets.json= to =analytics-cmd-line-sample= directory
      - Visit =analytics-cmd-line-sample= directory
        #+BEGIN_SRC sh
          cd analytics-cmd-line-sample
        #+END_SRC sh
 
-     - Create a file =client_secrets.json=
+     - Your =client_secrets.json= file should look something like this.
        #+BEGIN_SRC sh
          {
              "installed": {
